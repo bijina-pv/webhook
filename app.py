@@ -9,8 +9,12 @@ from flask import request
 from flask import make_response
 from flask import url_for
 from flask import redirect
+import sys
+import logging
 
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 data_file =  open('sample.json')    
 data = json.load(data_file)
 
