@@ -22,10 +22,22 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = "testwebhook"
+    res = "
+        "speech": speech,
+        "displayText": speech,
+        #"data": {},
+        # "contextOut": [],
+        "source": "apiai-onlinestore-shipping"
+    
+    res = json.dumps(res, indent=4)
+    print(res)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+
 
    
-    return res
+    
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
