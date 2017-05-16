@@ -14,6 +14,9 @@ app = Flask(__name__)
 data_file =  open('sample.json')    
 data = json.load(data_file)
 
+@app.route('/', methods=['GET'])
+def root():
+	return "Sample webhook to connect to api.ai chatbot."
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
