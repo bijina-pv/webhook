@@ -1,7 +1,7 @@
 import urllib
 import json
 import os
-import pywu
+
 
 from pprint import pprint
 from flask import Flask
@@ -24,11 +24,8 @@ def webhook():
 
     res = "testwebhook"
 
-    res = json.dumps(res, indent=4)
-    print(res)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
+   
+    return res
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
