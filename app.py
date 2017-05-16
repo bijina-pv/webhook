@@ -24,7 +24,7 @@ def root():
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    req = request.json(silent=True, force=True)
+    req = request.json[silent=True, force=True]
 
     print("Request:")
     print(json.dumps(req, indent=4))
@@ -33,7 +33,7 @@ def webhook():
     print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
-    return jsonify(r)
+    return r
 
 
    
