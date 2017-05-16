@@ -10,6 +10,8 @@ from flask import url_for
 from flask import redirect
 
 app = Flask(__name__)
+data_file =  open('sample.json')    
+data = json.load(data_file)
 
 @app.route('/')
 def hello():
