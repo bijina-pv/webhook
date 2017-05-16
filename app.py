@@ -14,8 +14,20 @@ data_file =  open('sample.json')
 data = json.load(data_file)
 
 @app.route('/')
-def hello():
-    return 'Hello World!'
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    req = request.get_json(silent=True, force=True)
+
+    print("Request:")
+    print(json.dumps(req, indent=4))
+
+    res = "testwebhook"
+
+    res = json.dumps(res, indent=4)
+    print(res)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
