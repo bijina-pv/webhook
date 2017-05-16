@@ -25,7 +25,7 @@ def root():
 @app.route('/webhook', methods=['POST'])
 def webhook():
    
-    res = makeWebhookResult(req)
+    res = makeWebhookResult()
     res = json.dumps(res, indent=4)
     print(res)
     r = make_response(res)
@@ -34,7 +34,7 @@ def webhook():
 
 
    
-def makeWebhookResult(req):
+def makeWebhookResult():
     speech="hi"
     return {
         "speech": speech,
