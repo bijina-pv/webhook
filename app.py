@@ -13,7 +13,7 @@ app = Flask(__name__)
 data_file =  open('sample.json')    
 data = json.load(data_file)
 
-@app.route('/')
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
     req = request.get_json(silent=True, force=True)
