@@ -43,12 +43,17 @@ def webhook():
    
 def makeWebhookResult(req):
     #speech="hi"
-    speech = "Invalid request !!"
+    speech = "Something went to Wrong ! Try again Later"
     action = req.get("result").get("action")
     result = req.get("result")
     parameters = result.get("parameters")
-    temp_speech=parameters.get("Contact-Issues")
-    speech=data["query"][0][temp_speech]
+    temp_speech=parameters.get("Parameters")
+    if temp_speech=="contact":
+	 contact_issue= temp_speech=parameters.get("Contact-Issues")
+	 speech=data["query"][0][temp_speech].get(contact_issue)
+    else:
+	speech=data["query"][0][temp_speech]
+    
 
     return {
         "speech": speech,
