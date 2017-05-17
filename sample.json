@@ -6,12 +6,12 @@
 			"release": "One must complete all the mandatory trainings and feedback. if there is no access to the Mandatory trainings, Required to raise a ticket in Ultimatix (under Global help desk) to fix the issue.",
 			"HIS": "HIS info fetch",
 			"joiningday": "joining formalities",
-			"baselocation":"baselocation",
-			"stream":"stream related enquiry",
-			"LAP":"lap details,
+			"baselocation": "baselocation",
+			"stream": "stream related enquiry",
+			"LAP": "lap details",
 			"contact": {
 
-				
+
 				"stakeholders": "HR – Paul.f@tcs.com , RMG- vijay.kc@tcs.com ,Facilitation team - Trivandrum.Facilitation@tcs.com ",
 				"Stay back at lab": "Inform the faculty and provide the list of associates to get the permission",
 				"get permission to go out": "Get the approval from Faculty then from the Facilitation team",
@@ -32,8 +32,8 @@
 				"Lost and found items": "Admin (Shaju/Deepthi RP)",
 				"AC": "Contact Reception",
 				"Health and Environmental risk": "HSE (Anjus Nair/Unnikrishnan)"
-					},
-		
+			}
+
 		}
 	]
 }
