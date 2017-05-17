@@ -25,12 +25,6 @@ def root():
 @app.route('/webhook', methods=['POST'])
 def webhook():
    
-   # res = makeWebhookResult()
-    #res = json.dumps(res, indent=4)
-    #print(res)
-    #r = make_response(res)
-    #r.headers['Content-Type'] = 'application/json'
-    #return r
     req = request.get_json(silent=True, force=True)
 
     print("Request:")
@@ -53,10 +47,11 @@ def makeWebhookResult(req):
     action = req.get("result").get("action")
     result = req.get("result")
     parameters = result.get("parameters")
+    speech=parameters.get("Contact-Issues")
 
     return {
-        "speech": parameters,
-        "displayText": parameters,
+        "speech": speech,
+        "displayText": speech,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
