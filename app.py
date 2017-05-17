@@ -25,7 +25,19 @@ def root():
 @app.route('/webhook', methods=['POST'])
 def webhook():
    
-    res = makeWebhookResult()
+   # res = makeWebhookResult()
+    #res = json.dumps(res, indent=4)
+    #print(res)
+    #r = make_response(res)
+    #r.headers['Content-Type'] = 'application/json'
+    #return r
+    req = request.get_json(silent=True, force=True)
+
+    print("Request:")
+    print(json.dumps(req, indent=4))
+
+    res = makeWebhookResult(req)
+
     res = json.dumps(res, indent=4)
     print(res)
     r = make_response(res)
@@ -33,12 +45,18 @@ def webhook():
     return r
 
 
+
    
-def makeWebhookResult():
-    speech="hi"
+def makeWebhookResult(req):
+    #speech="hi"
+    speech = "Invalid request !!"
+    action = req.get("result").get("action")
+    result = req.get("result")
+    parameters = result.get("parameters")
+
     return {
-        "speech": speech,
-        "displayText": speech,
+        "speech": parameters,
+        "displayText": parameters,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
