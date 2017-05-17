@@ -51,10 +51,7 @@ def makeWebhookResult(req):
 
     return {
         "speech": speech,
-        "displayText": speech,
-        #"data": {},
-        # "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
+        "displayText": speech
     }
 
 if __name__ == '__main__':
